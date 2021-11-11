@@ -1,28 +1,30 @@
-
-<table class="table table-sm table-striped table-bordered table-hover">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">24h High</th>
-            <th scope="col">24h Low</th>
-            <th scope="col">MarketCap</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @prices["DISPLAY"].each do |key, value| %>
+<h1 class="text-muted text-center">Today's Cryptocurrency Prices: </h1>
+<div class="my-3">
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
-            <td><%= key %></td>
-            <td><%= value["USD"]["PRICE"] %></td>
-            <td><%= value["USD"]["HIGHDAY"] %></td>
-            <td><%= value["USD"]["LOWDAY"] %></td>
-            <td><%= value["USD"]["MKTCAP"] %></td>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">24h High</th>
+                <th scope="col">24h Low</th>
+                <th scope="col">MarketCap</th>
             </tr>
-        <% end %>
-    </tbody>
-</table>
-
-<div class="container">
+        </thead>
+        <tbody>
+            <% @prices["DISPLAY"].each do |key, value| %>
+                <tr>
+                    <td><%= key %></td>
+                    <td><%= value["USD"]["PRICE"] %></td>
+                    <td><%= value["USD"]["HIGHDAY"] %></td>
+                    <td><%= value["USD"]["LOWDAY"] %></td>
+                    <td><%= value["USD"]["MKTCAP"] %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<p class="h1 text-muted text-center mt-5">Latest News on Cryptocurrency:</p>
+<div class="container my-3">
     <div class="row">
         <% for x in @news["Data"] %>
             <div class="col">
